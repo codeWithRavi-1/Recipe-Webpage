@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yummy Recipes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Yummy Recipes</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Breakfast</a></li>
+        <li><a href="#">Lunch</a></li>
+        <li><a href="#">Desserts</a></li>
+      </ul>
+    </nav>
+
+    <div class="search-container">
+      <input type="text" id="search" placeholder="Search recipes..." />
+    </div>
+
+    <div class="filter-buttons">
+      <button class="filter-btn" data-category="all">All</button>
+      <button class="filter-btn" data-category="breakfast">Breakfast</button>
+      <button class="filter-btn" data-category="lunch">Lunch</button>
+      <button class="filter-btn" data-category="desserts">Desserts</button>
+    </div>
+    <button id="dark-toggle">🌙 Toggle Dark Mode</button>
+  </header>
+
+  <main id="recipe-list">
+    <section class="recipe-card" data-category="lunch" data-title="Spaghetti Carbonara" data-description="1. Boil pasta. 2. Cook bacon until crispy. 3. Mix eggs, cheese, and pepper. 4. Toss everything together while hot. 5. Serve with extra cheese.">
+      <h2>Spaghetti Carbonara</h2>
+      <img src="spaghetti.jpg" alt="Spaghetti Carbonara" />
+      <p><strong>Category:</strong> Lunch</p>
+      <p><strong>Cook Time:</strong> 20 min</p>
+    </section>
+
+    <section class="recipe-card" data-category="breakfast" data-title="Pancakes" data-description="1. Mix flour, milk, egg, sugar, and baking powder. 2. Heat a pan and pour batter. 3. Flip when bubbles appear. 4. Serve with syrup or fruit.">
+      <h2>Pancakes</h2>
+      <img src="pancakes.jpg" alt="Pancakes" />
+      <p><strong>Category:</strong> Breakfast</p>
+      <p><strong>Cook Time:</strong> 15 min</p>
+    </section>
+
+    <section class="recipe-card" data-category="desserts" data-title="Chocolate Brownie" data-description="1. Melt chocolate and butter. 2. Mix in sugar and eggs. 3. Add flour and cocoa powder. 4. Pour into tray and bake at 180°C for 25–30 mins. 5. Cool before slicing.">
+      <h2>Chocolate Brownie</h2>
+      <img src="brownie.jpg" alt="Chocolate Brownie" />
+      <p><strong>Category:</strong> Desserts</p>
+      <p><strong>Cook Time:</strong> 30 min</p>
+    </section>
+  </main>
+
+  <section id="add-recipe">
+    <h2>Add Your Own Recipe</h2>
+    <form id="recipe-form">
+      <input type="text" id="title" placeholder="Recipe Title" required />
+      <input type="text" id="category" placeholder="Category (e.g. Breakfast)" required />
+      <input type="text" id="cooktime" placeholder="Cook Time (e.g. 30 min)" required />
+      <input type="text" id="image" placeholder="Image URL" required />
+      <textarea id="description" placeholder="Recipe Instructions..." required></textarea>
+      <button type="submit">Add Recipe</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Yummy Recipes. All rights reserved.</p>
+  </footer>
+
+  <div id="recipe-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+    </div>
+  </div>
+
+ 
+  <!-- Trigger Button -->
+<button id="open-ai-modal">AI Recipe Generator</button>
+
+<!-- AI Recipe Modal -->
+<div id="ai-recipe-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-ai-btn">&times;</span>
+    <h2>AI Recipe Generator</h2>
+    <input type="text" id="ingredientInput" placeholder="Enter ingredients (e.g. tomato, cheese)" />
+    <button id="get-recipe-btn">Get Recipe</button>
+    <div id="recipeResult"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
